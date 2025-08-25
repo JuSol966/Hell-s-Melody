@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "Controls",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "eca54b35-6c69-4b66-bbb0-578201457217",
+            "actions": [
+                {
+                    "name": "Hit",
+                    "type": "Button",
+                    "id": "66c67e0d-d746-47df-981b-644c072cdc22",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5b2b47d1-c89a-4fe9-9e50-c4f1b601e80a",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
