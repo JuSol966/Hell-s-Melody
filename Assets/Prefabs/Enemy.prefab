@@ -80,8 +80,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -8735178359981342127, guid: c0e6114a501295141a728da6e76bcef7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 6752761469978173073, guid: 455937233f26cbe4fb1a34cb96a55e5f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.4627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
   note: {fileID: 7652673225084533084}
   ring: {fileID: 3360526340802679014}
   startScale: 0.1
-  endScale: 1
+  endScale: 0.3
   scaleCurve:
     serializedVersion: 2
     m_Curve:
@@ -120,8 +120,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.52748525
-      value: 0.3745465
+      time: 0.45664632
+      value: 0.12691164
       inSlope: 1.2247553
       outSlope: 1.2247553
       tangentMode: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
   colorOverProgress:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 0.5176471, g: 1, b: 0.5176471, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -166,7 +166,7 @@ MonoBehaviour:
     atime5: 0
     atime6: 0
     atime7: 0
-    m_Mode: 0
+    m_Mode: 1
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
