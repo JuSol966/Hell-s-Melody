@@ -3,6 +3,14 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
+    [Header("Judge Popup")]
+    public bool showJudgeOnHitOnly = true;
+    public float judgeVisibleSeconds = 0.45f;
+    public bool judgeFade = true;
+    public float judgeFadeSeconds = 0.20f;
+
+    private Coroutine _judgeRoutine;
+    
     public TMP_Text scoreText;
     public TMP_Text comboText;
     public TMP_Text judgeText;
@@ -10,6 +18,11 @@ public class ScoreManager : MonoBehaviour
     private int _score;
     private int _combo;
     private int _maxCombo;
+
+    void Start()
+    {
+        if (judgeText) judgeText.gameObject.SetActive(false);
+    }
     
     public void RegisterHit(string label, float diff) {
         int add = label switch {
@@ -22,6 +35,35 @@ public class ScoreManager : MonoBehaviour
         _combo++;
         _maxCombo = Mathf.Max(_maxCombo, _combo);
         UpdateUI(label);
+        
+        if (judgeText && showJudgeOnHitOnly) {
+            if (_judgeRoutine != null) StopCoroutine(_judgeRoutine);
+            _judgeRoutine = StartCoroutine(ShowJudgeOnce(label));
+        }
+    }
+    
+    private System.Collections.IEnumerator ShowJudgeOnce(string label) {
+        judgeText.gameObject.SetActive(true);
+        judgeText.text = label;
+
+        var baseColor = judgeText.color;
+        baseColor.a = 1f;
+        judgeText.color = baseColor;
+
+        yield return new WaitForSeconds(judgeVisibleSeconds);
+
+        if (judgeFade) {
+            float t = 0f;
+            while (t < judgeFadeSeconds) {
+                t += Time.deltaTime;
+                float a = Mathf.Lerp(1f, 0f, t / judgeFadeSeconds);
+                var c = judgeText.color; c.a = a; judgeText.color = c;
+                yield return null;
+            }
+        }
+
+        judgeText.gameObject.SetActive(false);
+        var c2 = judgeText.color; c2.a = 1f; judgeText.color = c2;
     }
     
     public void RegisterMiss() {
