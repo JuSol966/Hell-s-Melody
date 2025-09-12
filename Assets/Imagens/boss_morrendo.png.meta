@@ -1,0 +1,613 @@
+fileFormatVersion: 2
+guid: b92d68ef851673f47b026cb03aed1779
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7142400146261548167
+    second: boss_morrendo_0
+  - first:
+      213: 4325038190025084040
+    second: boss_morrendo_1
+  - first:
+      213: -4582795188643656311
+    second: boss_morrendo_2
+  - first:
+      213: -4153567095319891428
+    second: boss_morrendo_3
+  - first:
+      213: -6226107208898916114
+    second: boss_morrendo_4
+  - first:
+      213: -287616413868281265
+    second: boss_morrendo_5
+  - first:
+      213: 5904129222713335423
+    second: boss_morrendo_6
+  - first:
+      213: 4038020355177683349
+    second: boss_morrendo_7
+  - first:
+      213: -5530765314714895127
+    second: boss_morrendo_8
+  - first:
+      213: 8861802486395312472
+    second: boss_morrendo_9
+  - first:
+      213: 86872315656104816
+    second: boss_morrendo_10
+  - first:
+      213: 4697795346709250063
+    second: boss_morrendo_11
+  - first:
+      213: 1086380834586635001
+    second: boss_morrendo_12
+  - first:
+      213: 6303893800919367924
+    second: boss_morrendo_13
+  - first:
+      213: 1981524994009015457
+    second: boss_morrendo_14
+  - first:
+      213: 7711733294858774045
+    second: boss_morrendo_15
+  - first:
+      213: 4005915777653732140
+    second: boss_morrendo_16
+  - first:
+      213: 8178853161515623613
+    second: boss_morrendo_17
+  - first:
+      213: 2614595500380143705
+    second: boss_morrendo_18
+  - first:
+      213: -4976968076878316980
+    second: boss_morrendo_19
+  - first:
+      213: 4580495028404252459
+    second: boss_morrendo_20
+  - first:
+      213: -8126721302397866326
+    second: boss_morrendo_21
+  - first:
+      213: -2526303300308641735
+    second: boss_morrendo_22
+  - first:
+      213: 6742041668306730049
+    second: boss_morrendo_23
+  - first:
+      213: -4568110323885092243
+    second: boss_morrendo_24
+  - first:
+      213: 8078880591276781203
+    second: boss_morrendo_25
+  - first:
+      213: 4726786687398311699
+    second: boss_morrendo_26
+  - first:
+      213: -3195862644175737010
+    second: boss_morrendo_27
+  - first:
+      213: -7130185881808246094
+    second: boss_morrendo_28
+  - first:
+      213: -7573807052447726416
+    second: boss_morrendo_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: boss_morrendo_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3800
+        width: 1500
+        height: 1900
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 973e166b8e811ec90800000000000000
+      internalID: -7142400146261548167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_morrendo_1
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 3800
+        width: 1500
+        height: 1900
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88c817c915f950c30800000000000000
+      internalID: 4325038190025084040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_morrendo_2
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 3800
+        width: 1500
+        height: 1900
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98d868e7e04a660c0800000000000000
+      internalID: -4582795188643656311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_morrendo_3
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 3800
+        width: 1500
+        height: 1900
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c12f4bcbbb09b56c0800000000000000
+      internalID: -4153567095319891428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_morrendo_4
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 3800
+        width: 1500
+        height: 1900
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee0d4181b7c6899a0800000000000000
+      internalID: -6226107208898916114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_morrendo_5
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 3800
+        width: 1500
+        height: 1900
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f423fcb356e220cf0800000000000000
+      internalID: -287616413868281265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_morrendo_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1900
+        width: 1500
+        height: 1900
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7ed4d32f3eafe150800000000000000
+      internalID: 5904129222713335423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_morrendo_7
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1900
+        width: 1500
+        height: 1900
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59999226e1ee90830800000000000000
+      internalID: 4038020355177683349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_morrendo_8
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1900
+        width: 1500
+        height: 1900
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ecfd50ef36ce33b0800000000000000
+      internalID: -5530765314714895127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_morrendo_9
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 1900
+        width: 1500
+        height: 1900
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8591447d8627bfa70800000000000000
+      internalID: 8861802486395312472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_morrendo_10
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 1900
+        width: 1500
+        height: 1900
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07b6f7b29e1a43100800000000000000
+      internalID: 86872315656104816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_morrendo_11
+      rect:
+        serializedVersion: 2
+        x: 7500
+        y: 1900
+        width: 1500
+        height: 1900
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0086145afbe13140800000000000000
+      internalID: 4697795346709250063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_morrendo_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1500
+        height: 1900
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fa2458fc99931f00800000000000000
+      internalID: 1086380834586635001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_morrendo_13
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0
+        width: 1500
+        height: 1900
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f00691330eeb7750800000000000000
+      internalID: 6303893800919367924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_morrendo_14
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 0
+        width: 1500
+        height: 1900
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a42775cb7acf7b10800000000000000
+      internalID: 1981524994009015457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_morrendo_15
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 0
+        width: 1500
+        height: 1900
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d162c9ab294950b60800000000000000
+      internalID: 7711733294858774045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_morrendo_16
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 0
+        width: 1500
+        height: 1900
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c23fe2fec2fd79730800000000000000
+      internalID: 4005915777653732140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 525141cbf6da0794da2c9671f6b84d58
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":3.0},"gridSpriteSize":{"x":1500.0,"y":1900.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      boss_morrendo_0: -7142400146261548167
+      boss_morrendo_1: 4325038190025084040
+      boss_morrendo_10: 86872315656104816
+      boss_morrendo_11: 4697795346709250063
+      boss_morrendo_12: 1086380834586635001
+      boss_morrendo_13: 6303893800919367924
+      boss_morrendo_14: 1981524994009015457
+      boss_morrendo_15: 7711733294858774045
+      boss_morrendo_16: 4005915777653732140
+      boss_morrendo_2: -4582795188643656311
+      boss_morrendo_3: -4153567095319891428
+      boss_morrendo_4: -6226107208898916114
+      boss_morrendo_5: -287616413868281265
+      boss_morrendo_6: 5904129222713335423
+      boss_morrendo_7: 4038020355177683349
+      boss_morrendo_8: -5530765314714895127
+      boss_morrendo_9: 8861802486395312472
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

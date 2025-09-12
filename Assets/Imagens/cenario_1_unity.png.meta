@@ -121,7 +121,7 @@ TextureImporter:
         width: 1000
         height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -143,15 +143,15 @@ TextureImporter:
         width: 1000
         height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c371beb46cdb9748b6a1e65f0b06924
-      internalID: 988873459
+      spriteID: 02c9237c9d2c9974088c9c04f9169568
+      internalID: -1070618882
       vertices: []
       indices: 
       edges: []
@@ -165,15 +165,15 @@ TextureImporter:
         width: 1000
         height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47821866a12c48d40a40db6e6848e34b
-      internalID: -2078012920
+      spriteID: c4697c011ffde2f429e4090d75cf0810
+      internalID: -840315832
       vertices: []
       indices: 
       edges: []
@@ -182,7 +182,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: be565f74926a4684d99090f048444d22
+    spriteID: 1b7389e37b5bc70469d5b7e79ab27670
     internalID: 0
     vertices: []
     indices: 
@@ -190,11 +190,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":1.0},"gridSpriteSize":{"x":1000.0,"y":600.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       cenario_1_unity_0: -6674925039629514518
-      cenario_1_unity_1: 988873459
-      cenario_1_unity_2: -2078012920
+      cenario_1_unity_1: -1070618882
+      cenario_1_unity_2: -840315832
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

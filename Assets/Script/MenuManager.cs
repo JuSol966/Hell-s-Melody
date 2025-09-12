@@ -1,26 +1,20 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
+using UnityEditor;
 
-public class MenuManager : MonoBehaviour
+public class MainMenuManager : MonoBehaviour
 {
     
-    public void StartGame()
+    public void PlayGame()
     {
-
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+       
+        SceneManager.LoadScene("Sandbox");
     }
 
-
-
+    
     public void QuitGame()
     {
-        
-    #if UNITY_EDITOR 
+     
         UnityEditor.EditorApplication.isPlaying = false;
-    #else
-        
-        Application.Quit();
-    #endif
     }
 }
