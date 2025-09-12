@@ -11,10 +11,13 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene("Sandbox");
     }
 
-    
+
     public void QuitGame()
     {
-     
-        UnityEditor.EditorApplication.isPlaying = false;
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false; 
+#else
+            Application.Quit(); 
+#endif
     }
 }
