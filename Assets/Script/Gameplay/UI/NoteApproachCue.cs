@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class NoteApproachRing : MonoBehaviour
+public class NoteApproachCue : MonoBehaviour
 {
-    public enum ScaleSpace { RelativeToParent, World }   // << novo
+    public enum ScaleSpace { RelativeToParent, World }
 
     [Header("Refs")]
     public EnemyNote note;
@@ -23,12 +23,12 @@ public class NoteApproachRing : MonoBehaviour
     public float fadeTime   = 0.08f;
 
     [Header("Config")]
-    public ScaleSpace scaleSpace = ScaleSpace.World;     // << use World
+    public ScaleSpace scaleSpace = ScaleSpace.World;
     public bool disableWhenJudged = true;
 
     // estados
-    Vector3 _baseLocal;   // escala local no Awake
-    Vector3 _baseWorld;   // escala em mundo no Awake
+    Vector3 _baseLocal;
+    Vector3 _baseWorld;
     float _holdLeft=-1f, _fadeLeft=-1f;
 
     void Reset() {
@@ -39,7 +39,7 @@ public class NoteApproachRing : MonoBehaviour
     void Awake() {
         if (!ring) return;
         _baseLocal = ring.transform.localScale;
-        _baseWorld = ring.transform.lossyScale;   // << referência em mundo
+        _baseWorld = ring.transform.lossyScale;
     }
 
     void OnEnable() {
@@ -51,14 +51,12 @@ public class NoteApproachRing : MonoBehaviour
         if (!note || !ring) return;
 
         if (disableWhenJudged && note.judged) { ring.enabled = false; return; }
-
-        // tempo assinado até o hit
+        
         float songNow   = note.SongTimeNow();
         float timeToHit = note.targetTime - songNow;
 
         if (timeToHit <= 0f) { PostHitSequence(); return; }
-
-        // progresso 0 (spawn) -> 1 (hit) usando approachTime
+        
         float prog = Mathf.InverseLerp(
             note.approachTime, 0f,
             Mathf.Clamp(timeToHit, 0f, note.approachTime)
@@ -67,7 +65,7 @@ public class NoteApproachRing : MonoBehaviour
         float k = scaleCurve.Evaluate(prog);
         float s = Mathf.Lerp(startScale, endScale, k);
 
-        ApplyScale(s);            // << agora independente do pai, se World
+        ApplyScale(s);
 
         if (colorOverProgress != null && colorOverProgress.colorKeys.Length > 0) {
             var col = colorOverProgress.Evaluate(prog);
@@ -75,7 +73,7 @@ public class NoteApproachRing : MonoBehaviour
             ring.color = col;
         }   
 
-        _holdLeft = _fadeLeft = -1f; // reset do pós-hit
+        _holdLeft = _fadeLeft = -1f;
     }
 
     void ApplyScale(float factor) {
@@ -83,8 +81,7 @@ public class NoteApproachRing : MonoBehaviour
             ring.transform.localScale = _baseLocal * factor;
             return;
         }
-
-        // World: queremos uma escala em MUNDO = _baseWorld * factor
+        
         Vector3 desiredWorld = _baseWorld * factor;
         var p = ring.transform.parent;
         if (p == null) {
@@ -108,7 +105,7 @@ public class NoteApproachRing : MonoBehaviour
         }
         if (_holdLeft > 0f) {
             _holdLeft -= Time.deltaTime;
-            ApplyScale(endScale); // mantém no tamanho final
+            ApplyScale(endScale);
             return;
         }
         if (_fadeLeft > 0f) {

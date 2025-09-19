@@ -17,7 +17,7 @@ public class EnemyNote : MonoBehaviour
     public float hitlineX = 0f;
     
     [Header("UI")]
-    public NoteJudgeLabel judge;
+    public NoteJudgePopup judge;
     public float despawnAfterJudge = 0.55f;
     public Transform judgeWorldParent;
     public Vector3 judgeLocalOffset = new Vector3(0f, 0.5f, 0f);

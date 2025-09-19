@@ -10,6 +10,11 @@ public class HitLineJudge : MonoBehaviour
     public ScoreManager score;
     public InputActionProperty hitAction;
     public TimingWindows windows;
+    public PlayerHealth playerHealth;
+
+    [Header("Damage Rules")]
+    public bool damageOnTimeout = true;
+    public bool damageOnBadPress = false;
 
     void OnEnable() {
         var act = hitAction.action;
@@ -41,6 +46,7 @@ public class HitLineJudge : MonoBehaviour
 
         if (!TryGetBestCandidate(tNow, out var note, out var diff)) {
             score?.RegisterMiss();
+            if (damageOnBadPress) playerHealth?.TakeHit();
             return;
         }
 
@@ -48,6 +54,7 @@ public class HitLineJudge : MonoBehaviour
         
         if (rank == HitRank.Miss) {
             score?.RegisterMiss();
+            if (damageOnBadPress) playerHealth?.TakeHit();
             return;
         }
 
@@ -65,6 +72,7 @@ public class HitLineJudge : MonoBehaviour
                 n.judged = true;
                 n.missed = true;
                 n.ShowJudge("MISS");
+                if (damageOnTimeout) playerHealth?.TakeHit();
             }
         }
     }

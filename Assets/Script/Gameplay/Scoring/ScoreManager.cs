@@ -15,6 +15,8 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text comboText;
     public TMP_Text judgeText;
+    
+    public int CurrentScore => _score;
 
     private int _score;
     private int _combo;

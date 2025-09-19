@@ -1,60 +1,121 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
+[DisallowMultipleComponent]
 public class GameFlow : MonoBehaviour
 {
-    [Header("Refs")]
+    [Header("Core Refs")]
     public NoteSpawner spawner;
     public RhythmConductor conductor;
     public ScoreManager score;
+    public PlayerHealth health;
 
-    [Header("Pause (opcional)")]
-    public InputActionProperty pauseAction;
+    [Header("UI")]
     public GameObject pausePanel;
+    public GameObject gameOverPanel;
+
+    [Header("Input")]
+    public InputActionProperty pauseAction;
+
+    [Header("Options")]
+    public bool pauseOnFocusLoss = true;
+    [Range(0f, 2f)] public float restartLeadIn = 0.8f;
 
     bool _paused;
+    bool _gameOver;
+
+    void Awake() {
+        Time.timeScale = 1f;
+        if (pausePanel)    pausePanel.SetActive(false);
+        if (gameOverPanel) gameOverPanel.SetActive(false);
+    }
 
     void OnEnable() {
-        if (pauseAction.action != null) {
-            pauseAction.action.performed += OnPausePerformed;
-            pauseAction.action.Enable();
-        }
+        var act = pauseAction.action;
+        if (act != null) { act.performed += OnPausePerformed; act.Enable(); }
+        if (health) health.onDeath += OnPlayerDeath;
     }
+
     void OnDisable() {
-        if (pauseAction.action != null) {
-            pauseAction.action.performed -= OnPausePerformed;
-            pauseAction.action.Disable();
+        var act = pauseAction.action;
+        if (act != null) { act.performed -= OnPausePerformed; act.Disable(); }
+        if (health) health.onDeath -= OnPlayerDeath;
+        Time.timeScale = 1f;
+    }
+
+    void Start() => StartRun();
+
+    void OnApplicationFocus(bool focus) {
+        if (pauseOnFocusLoss && !focus && !_paused && !_gameOver) Pause();
+    }
+
+    void OnPausePerformed(InputAction.CallbackContext _) {
+        if (_gameOver) return;
+        TogglePause();
+    }
+
+    public void StartRun() {
+        _gameOver = false;
+        _paused = false;
+
+        Time.timeScale = 1f;
+        if (pausePanel)    pausePanel.SetActive(false);
+        if (gameOverPanel) gameOverPanel.SetActive(false);
+
+        score?.ResetAll();
+        health?.ResetAll();
+
+        conductor?.Restart(restartLeadIn);
+
+        if (spawner) {
+            spawner.enabled = true;
+            spawner.StartChart();
         }
     }
 
-    void OnPausePerformed(InputAction.CallbackContext ctx) {
-        if (_paused) Resume();
-        else Pause();
+    public void Retry() => StartRun();
+
+    public void GameOver() {
+        if (_gameOver) return;
+        _gameOver = true;
+
+        conductor?.Pause();
+        if (spawner) spawner.enabled = false;
+        Time.timeScale = 0f;
+
+        if (pausePanel) pausePanel.SetActive(false);
+        if (gameOverPanel) {
+            gameOverPanel.SetActive(true);
+            var ui = gameOverPanel.GetComponent<GameOverUI>();
+            if (ui) ui.Refresh();
+        }
     }
 
-    // Chamado pelo botão "Retry" ou quando o jogador perde
-    public void Retry() {
-        _paused = false;
-        if (pausePanel) pausePanel.SetActive(false);
-        if (score) score.ResetAll();
-        if (spawner) spawner.StartChart();
-    }
+    public void TogglePause() { if (_paused) Resume(); else Pause(); }
 
     public void Pause() {
-        if (_paused) return;
+        if (_paused || _gameOver) return;
         _paused = true;
         if (pausePanel) pausePanel.SetActive(true);
+        conductor?.Pause();
         if (spawner) spawner.enabled = false;
-        if (conductor) conductor.Pause();
         Time.timeScale = 0f;
     }
 
     public void Resume() {
-        if (!_paused) return;
+        if (!_paused || _gameOver) return;
         _paused = false;
         if (pausePanel) pausePanel.SetActive(false);
-        if (conductor) conductor.Resume();
-        if (spawner) spawner.enabled = true;
         Time.timeScale = 1f;
+        conductor?.Resume();
+        if (spawner) spawner.enabled = true;
+    }
+
+    void OnPlayerDeath() => GameOver();
+
+    public void QuitToMenu(string sceneName) {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(sceneName);
     }
 }
