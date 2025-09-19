@@ -310,7 +310,6 @@ MonoBehaviour:
   missed: 0
   unitsPerSecond: 6
   approachTime: 1.1
-  missWindow: 0.15
   laneY: 0
   hitlineX: 0
   judge: {fileID: 4124065158592147736}
@@ -320,9 +319,6 @@ MonoBehaviour:
   hideOnJudge:
   - {fileID: 4357062071598217630}
   despawnInstantOnJudge: 1
-  winPerfect: 0.05
-  winGreat: 0.1
-  winGood: 0.15
 --- !u!114 &3626183033482702054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,7 +415,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2748801893950672218, guid: f13af5c6d6337524fab9eca72cdf1b81, type: 3}
       propertyPath: m_Name
-      value: JudjePopup2D
+      value: JudgePopup
       objectReference: {fileID: 0}
     - target: {fileID: 3001184767763195461, guid: f13af5c6d6337524fab9eca72cdf1b81, type: 3}
       propertyPath: m_Pivot.x

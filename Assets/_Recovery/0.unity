@@ -124,6 +124,66 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5570403266447805609, guid: 43fad0ee36e6c294984fb6171273e2b3, type: 3}
   m_PrefabInstance: {fileID: 2330481183559257847}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &141170411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 141170413}
+  - component: {fileID: 141170412}
+  m_Layer: 0
+  m_Name: HitLineJudge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &141170412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141170411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb02536a0cb65f4895960052b018b6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HitLineJudge
+  conductor: {fileID: 1093298698}
+  spawner: {fileID: 2007085761}
+  score: {fileID: 1897265526}
+  hitAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Hit
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 081ff62a-5151-43ee-bf9b-0b04ddf4646b
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 490054146646196698, guid: 984637dee7a493448aa77202482cc145, type: 3}
+  windows: {fileID: 11400000, guid: 3d77860f01a0ca04992b4995b3da9847, type: 2}
+--- !u!4 &141170413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141170411}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 928151069}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &181976536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1948,6 +2008,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 993691482}
+  - {fileID: 141170413}
   m_Father: {fileID: 341989458}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &934286369
@@ -2232,7 +2293,7 @@ GameObject:
   - component: {fileID: 993691482}
   - component: {fileID: 993691483}
   m_Layer: 0
-  m_Name: HitLineVisual
+  m_Name: Mark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3885,7 +3946,7 @@ GameObject:
   - component: {fileID: 2007085760}
   - component: {fileID: 2007085761}
   m_Layer: 0
-  m_Name: OneKeySpawner
+  m_Name: NotesSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3924,23 +3985,8 @@ MonoBehaviour:
   enemyPrefab: {fileID: 7652673225084533084, guid: 6fcee3889abd9a849a75f0e6d71045ae, type: 3}
   hitLine: {fileID: 928151069}
   score: {fileID: 1897265526}
-  hitAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Hit
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 880dfbf3-ac93-4ec2-955a-7d187775d4b6
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 490054146646196698, guid: 984637dee7a493448aa77202482cc145, type: 3}
   unitsPerSecond: 6
   laneY: 0
-  perfect: 0.05
-  great: 0.1
-  good: 0.15
   noAudio: 0
   noteScale: 0.5
 --- !u!1 &2007258584

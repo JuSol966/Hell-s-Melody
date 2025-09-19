@@ -6,10 +6,18 @@ public class BeatmapLoader : MonoBehaviour
 
     public Beatmap Load() {
         if (!beatmapJson) {
-            Debug.LogWarning("Beatmap JSON não atribuído. Use gerador por BPM.");
+            Debug.LogError("[BeatmapLoader] Nenhum TextAsset atribuído.");
             return null;
         }
         
-        return JsonUtility.FromJson<Beatmap>(beatmapJson.text);
+        var map = JsonUtility.FromJson<Beatmap>(beatmapJson.text);
+        
+        if (map == null || map.notes == null || map.notes.Count == 0) {
+            Debug.LogError("[BeatmapLoader] JSON inválido ou sem notas.");
+            return null;
+        }
+        
+        map.notes.Sort((a,b) => a.t.CompareTo(b.t));
+        return map;
     }
 }

@@ -82,9 +82,7 @@ public class NoteOutlineShaderDriver : MonoBehaviour
         if (!note || !sr || sr.sharedMaterial == null) return;
 
         // tempo restante p/ o hit (positivo antes do hit, ~0 no hit)
-        float songNow = 0f;
-        var cond = _conductorFI != null ? _conductorFI.GetValue(note) as RhythmConductor : null;
-        if (cond) songNow = cond.SongTimeSec;
+        float songNow = note ? note.SongTimeNow() : 0f;
         float timeToHit = note.targetTime - songNow;
 
         // progresso desde o spawn (approach) até o hit

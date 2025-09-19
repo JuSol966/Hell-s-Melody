@@ -20,10 +20,23 @@ public class ScoreManager : MonoBehaviour
     private int _combo;
     private int _maxCombo;
     
-
     void Start()
     {
         if (judgeText) judgeText.gameObject.SetActive(false);
+    }
+
+    public void ResetAll()
+    {
+        _score = 0;
+        _combo = 0;
+        _maxCombo = 0;
+        if (scoreText) scoreText.text = "Score: 0";
+        if (comboText) comboText.text = "Combo: -";
+        if (judgeText)
+        {
+            judgeText.gameObject.SetActive(false);
+            judgeText.text = "";
+        }
     }
 
     public void RegisterHit(string label, float diff)
@@ -86,6 +99,4 @@ public class ScoreManager : MonoBehaviour
         if (comboText) comboText.text = _combo > 0 ? $"Combo: {_combo}" : "Combo: -";
         if (judgeText) judgeText.text = label;
     }
-
-  
 }

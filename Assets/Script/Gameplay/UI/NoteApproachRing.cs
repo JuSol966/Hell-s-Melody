@@ -119,11 +119,3 @@ public class NoteApproachRing : MonoBehaviour
         }
     }
 }
-
-// helper que você já tem na EnemyNote:
-public static class EnemyNoteTimeExt {
-    public static float SongTimeNow(this EnemyNote n) =>
-        n != null ? (n.GetType()
-           .GetField("_conductor", System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Instance)
-           ?.GetValue(n) as RhythmConductor)?.SongTimeSec ?? 0f : 0f;
-}

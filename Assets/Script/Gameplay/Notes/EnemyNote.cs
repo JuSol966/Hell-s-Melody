@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class EnemyNote : MonoBehaviour
 {
-    
     private RhythmConductor _conductor;
     
     [Header("Runtime")] public float targetTime;
@@ -12,7 +11,7 @@ public class EnemyNote : MonoBehaviour
 
     [Header("Tuning")] public float unitsPerSecond = 6f;
     public float approachTime = 1.1f;
-    public float missWindow = 0.15f;
+   
 
     [Header("Lane/Refs")] public float laneY = 0f;
     public float hitlineX = 0f;
@@ -29,14 +28,21 @@ public class EnemyNote : MonoBehaviour
     [Header("Judge Mode")]
     public bool despawnInstantOnJudge = true;
     
-    [Header("Hit Windows (s)")]
-    public float winPerfect = 0.05f;
-    public float winGreat   = 0.10f;
-    public float winGood    = 0.15f;
-    
-    public float AbsTimeDiff() {
-        return Mathf.Abs(targetTime - (_conductor != null ? _conductor.SongTimeSec : 0f));
+    void Update() {
+        if (_conductor == null || _conductor.IsPaused) return;
+        float songTime = _conductor.SongTimeSec;
+
+        float timeToHit = targetTime - songTime;
+        float x = hitlineX + timeToHit * unitsPerSecond;
+        transform.position = new Vector3(x, laneY, 0f);
     }
+    
+    public void Judge(string label, bool wasMiss) {
+        judged = true;
+        missed = wasMiss;
+        ShowJudge(label);
+    }
+
     public void HideBody(bool hide) {
         if (hideOnJudge == null) return;
         foreach (var r in hideOnJudge) if (r) r.enabled = !hide;
@@ -95,20 +101,5 @@ public class EnemyNote : MonoBehaviour
         float songTime = _conductor.SongTimeSec;
         float timeToHit = targetTime - songTime;
         transform.position = new Vector3(hitlineX + timeToHit * unitsPerSecond, laneY, 0f);
-    }
-
-    void Update() {
-        if (_conductor == null) return;
-        float songTime = _conductor.SongTimeSec;
-
-        if (!judged && songTime > targetTime + missWindow) {
-            judged = true; missed = true;
-            ShowJudge("MISS");
-            return;
-        }
-
-        float timeToHit = targetTime - songTime;
-        float x = hitlineX + timeToHit * unitsPerSecond;
-        transform.position = new Vector3(x, laneY, 0f);
     }
 }
