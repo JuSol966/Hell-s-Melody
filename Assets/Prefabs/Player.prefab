@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5677791369890642186}
   - component: {fileID: 2384169191244626727}
   - component: {fileID: 3270907530912276351}
+  - component: {fileID: 5093834904886736350}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1266629346334423454, guid: 5f7c528c4d265074988254ff958a9679, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -140,3 +141,16 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 490054146646196698, guid: 984637dee7a493448aa77202482cc145, type: 3}
   triggerName: HitTrigger
+--- !u!114 &5093834904886736350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602078568627033056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 076cfa7c37a23ca469c67f0d93fe9b89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  maxLives: 6
