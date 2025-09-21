@@ -127,5 +127,4 @@ public class HitLineJudge : MonoBehaviour
         conductor is { IsPaused: true };
 }
 
-// Rank sem “strings mágicas”
 public enum HitRank { Miss, Good, Great, Perfect }

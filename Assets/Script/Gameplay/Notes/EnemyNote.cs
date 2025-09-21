@@ -12,6 +12,7 @@ public class EnemyNote : MonoBehaviour
     [Header("Tuning")] public float unitsPerSecond = 6f;
     public float approachTime = 1.1f;
    
+    public RhythmConductor SongConductor => _conductor;
 
     [Header("Lane/Refs")] public float laneY = 0f;
     public float hitlineX = 0f;
@@ -48,14 +49,20 @@ public class EnemyNote : MonoBehaviour
         foreach (var r in hideOnJudge) if (r) r.enabled = !hide;
     }
 
-    public void ShowJudge(string label) {
+    public void ShowJudge(string label)
+    {
         HideBody(true);
 
-        if (judge) {
-            var parent = judgeWorldParent ? judgeWorldParent : transform.parent;
-            judge.transform.SetParent(parent, true);
-            judge.Play(label);
-            StartCoroutine(ReattachJudgeWhenDone());
+        if (judge)
+        {
+            var baseR = (hideOnJudge != null && hideOnJudge.Length > 0) ? hideOnJudge[0] : GetComponentInChildren<Renderer>();
+            if (baseR) judge.SetSortingFromRenderer(baseR, 100);
+
+            Vector3 worldPos = transform.TransformPoint(judgeLocalOffset);
+
+            Transform parent = judgeWorldParent ? judgeWorldParent : null;
+
+            judge.PlayAtWorld(label, parent, worldPos);
         }
 
         if (despawnInstantOnJudge) OnDespawn?.Invoke(this);

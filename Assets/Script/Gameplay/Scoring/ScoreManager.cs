@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -15,12 +14,14 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text comboText;
     public TMP_Text judgeText;
+    public TMP_Text playerHPText;
     
     public int CurrentScore => _score;
 
     private int _score;
     private int _combo;
     private int _maxCombo;
+    private int _playerHP = 5;
     
     void Start()
     {
@@ -32,6 +33,8 @@ public class ScoreManager : MonoBehaviour
         _score = 0;
         _combo = 0;
         _maxCombo = 0;
+        _playerHP = 5;
+        
         if (scoreText) scoreText.text = "Score: 0";
         if (comboText) comboText.text = "Combo: -";
         if (judgeText)
@@ -39,6 +42,7 @@ public class ScoreManager : MonoBehaviour
             judgeText.gameObject.SetActive(false);
             judgeText.text = "";
         }
+        if (playerHPText) playerHPText.text = _playerHP.ToString();
     }
 
     public void RegisterHit(string label, float diff)
@@ -92,6 +96,8 @@ public class ScoreManager : MonoBehaviour
     public void RegisterMiss()
     {
         _combo = 0;
+        _playerHP--;
+        Debug.Log(_playerHP);
         UpdateUI("MISS");
     }
 
@@ -100,5 +106,6 @@ public class ScoreManager : MonoBehaviour
         if (scoreText) scoreText.text = $"Score: {_score}";
         if (comboText) comboText.text = _combo > 0 ? $"Combo: {_combo}" : "Combo: -";
         if (judgeText) judgeText.text = label;
+        if (judgeText) playerHPText.text = _playerHP.ToString();
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -22,8 +23,17 @@ public class GameFlow : MonoBehaviour
     public bool pauseOnFocusLoss = true;
     [Range(0f, 2f)] public float restartLeadIn = 0.8f;
 
-    bool _paused;
-    bool _gameOver;
+    [Header("Boss")]
+    public BossDirector bossPrefab;
+    public Transform bossSpawnPoint;
+    public float bossSpawnAtSec = 0f;
+    public TimingWindows timingWindows; 
+    public InputActionProperty hitActionForBoss;
+    private BossDirector _boss;
+    private Coroutine _bossSpawnCo;
+
+    private bool _paused;
+    private bool _gameOver;
 
     void Awake() {
         Time.timeScale = 1f;
@@ -41,6 +51,7 @@ public class GameFlow : MonoBehaviour
         var act = pauseAction.action;
         if (act != null) { act.performed -= OnPausePerformed; act.Disable(); }
         if (health) health.onDeath -= OnPlayerDeath;
+        if (_bossSpawnCo != null) StopCoroutine(_bossSpawnCo);
         Time.timeScale = 1f;
     }
 
@@ -72,6 +83,36 @@ public class GameFlow : MonoBehaviour
             spawner.enabled = true;
             spawner.StartChart();
         }
+
+        if (_boss) { Destroy(_boss.gameObject); _boss = null; }
+        if (_bossSpawnCo != null) StopCoroutine(_bossSpawnCo);
+        _bossSpawnCo = StartCoroutine(SpawnBossWhenReady());
+    }
+
+    IEnumerator SpawnBossWhenReady() {
+        if (!bossPrefab) yield break;
+
+        while (!_gameOver && conductor == null) yield return null;
+        while (!_gameOver && conductor.SongTimeSec < bossSpawnAtSec) yield return null;
+
+        if (!_gameOver) SpawnBossNow();
+    }
+
+    void SpawnBossNow() {
+        var pos = bossSpawnPoint ? bossSpawnPoint.position : Vector3.zero;
+        _boss = Instantiate(bossPrefab, pos, Quaternion.identity);
+
+        _boss.WireSceneRefs(
+            conductor,
+            health,
+            spawner,
+            timingWindows,
+            hitActionForBoss,
+            spawner.hitLine,
+            score
+        );
+
+        if (_boss.boss == null) _boss.boss = _boss.GetComponent<BossHealth>();
     }
 
     public void Retry() => StartRun();
