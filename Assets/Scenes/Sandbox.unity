@@ -1066,7 +1066,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1093298697}
   - {fileID: 2007085760}
   - {fileID: 1897265525}
   - {fileID: 1025122230}
@@ -1352,7 +1351,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'Score: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32c18fd62444e5f418ddb86f481458d9, type: 2}
   m_sharedMaterial: {fileID: -436791092596187705, guid: 32c18fd62444e5f418ddb86f481458d9, type: 2}
@@ -2042,44 +2041,41 @@ MonoBehaviour:
   health: {fileID: 656586146}
   pausePanel: {fileID: 1845041158}
   gameOverPanel: {fileID: 1066380441}
+  resultText: {fileID: 0}
+  finalScoreText: {fileID: 0}
+  goodThreshold: 5000
+  perfectThreshold: 10000
+  gameDuration: 110
   pauseAction:
     m_UseReference: 0
     m_Action:
       m_Name: Pause
-      m_Type: 1
-      m_ExpectedControlType: Button
-      m_Id: c789a8c8-6b9d-470a-902d-d3a860d5b58f
-      m_Processors: 
-      m_Interactions: Press
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: af179cd3-4750-44b7-a62f-9cefda9d59f3
-        m_Path: <Keyboard>/escape
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Pause
-        m_Flags: 0
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  pauseOnFocusLoss: 1
-  restartLeadIn: 0.8
-  bossPrefab: {fileID: 2788012662685438044, guid: f828a2db11a426545b2d07c0c128c485, type: 3}
-  bossSpawnPoint: {fileID: 1922318155}
-  bossSpawnAtSec: 100000
-  timingWindows: {fileID: 11400000, guid: b26cb3064a2603d4dbc95bd1979a0fcc, type: 2}
-  hitActionForBoss:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Hit Action For Boss
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: bf6606be-d767-4156-b255-2ba732fe227a
+      m_Id: f2b24ab5-5758-4982-926d-aaf944dfce34
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 490054146646196698, guid: 984637dee7a493448aa77202482cc145, type: 3}
+    m_Reference: {fileID: 0}
+  pauseOnFocusLoss: 1
+  restartLeadIn: 0.8
+  bossPrefab: {fileID: 0}
+  bossSpawnPoint: {fileID: 0}
+  bossSpawnAtSec: 0
+  timingWindows: {fileID: 0}
+  hitActionForBoss:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Hit Action For Boss
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 77eb71ed-a760-4e9e-a44d-162594b037b7
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!4 &880464483
 Transform:
   m_ObjectHideFlags: 0
@@ -2962,12 +2958,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093298695}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 449162993}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1093298698
 MonoBehaviour:
@@ -2981,7 +2977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf8ed4d0d78b9f74a802543ddcc781ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RhythmConductor
-  song: {fileID: 8300000, guid: ad2f77cff9f47154b960c24798358ab2, type: 3}
+  song: {fileID: 8300000, guid: ed91297303f2a3a41af332e0fb89d72a, type: 3}
   latencyOffset: 0
 --- !u!82 &1093298699
 AudioSource:
@@ -2994,7 +2990,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: ed91297303f2a3a41af332e0fb89d72a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -4519,6 +4515,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1173597845}
   - {fileID: 341989458}
+  - {fileID: 1093298697}
   - {fileID: 449162993}
   - {fileID: 1832549039}
   - {fileID: 725477005}
