@@ -14,6 +14,6 @@ public class GameOverUI : MonoBehaviour
 
     public void Refresh() {
         if (!score) return;
-        if (scoreText)    scoreText.text  = "SCORE " + score.CurrentScore.ToString("N0");
+        if (scoreText)   scoreText.text   = "SCORE: " + score.CurrentScore.ToString("N0");
     }
 }

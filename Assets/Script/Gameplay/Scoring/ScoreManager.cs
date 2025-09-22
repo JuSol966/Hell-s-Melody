@@ -9,23 +9,27 @@ public class ScoreManager : MonoBehaviour
     public bool judgeFade = true;
     public float judgeFadeSeconds = 0.20f;
 
+    public PlayerHealth playerHealth;
+    
     private Coroutine _judgeRoutine;
 
     public TMP_Text scoreText;
     public TMP_Text comboText;
     public TMP_Text judgeText;
-    public TMP_Text playerHPText;
+    public TMP_Text livesText;
     
     public int CurrentScore => _score;
-
+    
     private int _score;
     private int _combo;
     private int _maxCombo;
-    private int _playerHP = 5;
+    private int _livesCount;
     
     void Start()
     {
         if (judgeText) judgeText.gameObject.SetActive(false);
+        _livesCount = playerHealth.maxLives;
+        livesText.text = $"Lives: {_livesCount}";
     }
 
     public void ResetAll()
@@ -33,16 +37,15 @@ public class ScoreManager : MonoBehaviour
         _score = 0;
         _combo = 0;
         _maxCombo = 0;
-        _playerHP = 5;
         
         if (scoreText) scoreText.text = "Score: 0";
         if (comboText) comboText.text = "Combo: -";
+        if (livesText) livesText.text = $"Lives: {playerHealth.maxLives}";
         if (judgeText)
         {
             judgeText.gameObject.SetActive(false);
             judgeText.text = "";
         }
-        if (playerHPText) playerHPText.text = _playerHP.ToString();
     }
 
     public void RegisterHit(string label, float diff)
@@ -65,6 +68,7 @@ public class ScoreManager : MonoBehaviour
             _judgeRoutine = StartCoroutine(ShowJudgeOnce(label));
         }
     }
+    
 
     private System.Collections.IEnumerator ShowJudgeOnce(string label)
     {
@@ -96,8 +100,7 @@ public class ScoreManager : MonoBehaviour
     public void RegisterMiss()
     {
         _combo = 0;
-        _playerHP--;
-        Debug.Log(_playerHP);
+        _livesCount--;
         UpdateUI("MISS");
     }
 
@@ -106,6 +109,6 @@ public class ScoreManager : MonoBehaviour
         if (scoreText) scoreText.text = $"Score: {_score}";
         if (comboText) comboText.text = _combo > 0 ? $"Combo: {_combo}" : "Combo: -";
         if (judgeText) judgeText.text = label;
-        if (judgeText) playerHPText.text = _playerHP.ToString();
+        if (livesText) livesText.text = $"Lives: {_livesCount}";
     }
 }
